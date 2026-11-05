@@ -1,0 +1,15 @@
+<section>
+  <h3>Sobre mim</h3>
+  <p>Olá! Eu sou o Breno Cavalcanti e este é o meu portfólio, feito com Django.</p>
+</section>
+
+<section>
+  <h3>Posts recentes</h3>
+  <ul>
+    {% for recent in recent_posts %}
+      <li><a href="{% url 'post_detail' recent.pk %}">{{ recent.title }}</a></li>
+    {% empty %}
+      <li>Nenhum post ainda.</li>
+    {% endfor %}
+  </ul>
+</section>
